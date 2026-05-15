@@ -2,7 +2,8 @@ import joblib
 import streamlit as st
 import pandas as pd
 import numpy as np
-model = joblib.load(r'D:\Documents\Python Projects\python-projeects\orders-volume-prediction\model.pkl')
+import pickle
+model = pickle.load(open("model.pkl", "rb"))
 st.title('Pushpin Task Volume Prediction App')
 st.write('Enter the necessary details here:')
 st_date = st.date_input('Select Date:')
