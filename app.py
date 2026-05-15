@@ -11,15 +11,15 @@ st_time = st.select_slider(
     list(range(24))
 )
 
-if 1 <= hour <= 4:
+if 1 <= st_time <= 4:
     assigned_shift = 'A'
-elif 5 <= hour <= 8:
+elif 5 <= st_time <= 8:
     assigned_shift = 'B'
-elif 9 <= hour <= 12:
+elif 9 <= st_time <= 12:
     assigned_shift = 'C'
-elif 13 <= hour <= 16:
+elif 13 <= st_time <= 16:
     assigned_shift = 'D'
-elif 17 <= hour <= 20:
+elif 17 <= st_time <= 20:
     assigned_shift = 'E'
 else:
     assigned_shift = 'F'
