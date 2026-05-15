@@ -6,7 +6,23 @@ model = joblib.load("model.pkl")
 st.title('Pushpin Task Volume Prediction App')
 st.write('Enter the necessary details here:')
 st_date = st.date_input('Select Date:')
-st_time = st.time_input('Select Time:')
+st_time = st.select_slider(
+    'Select Time',
+    list(range(24))
+)
+
+if 1 <= hour <= 4:
+    assigned_shift = 'A'
+elif 5 <= hour <= 8:
+    assigned_shift = 'B'
+elif 9 <= hour <= 12:
+    assigned_shift = 'C'
+elif 13 <= hour <= 16:
+    assigned_shift = 'D'
+elif 17 <= hour <= 20:
+    assigned_shift = 'E'
+else:
+    assigned_shift = 'F'
 datetime_value = pd.to_datetime(f'{st_date} {st_time}')
 year = datetime_value.year
 month = datetime_value.month
@@ -21,10 +37,6 @@ lag1 = st.number_input(
 lag24 = st.number_input(
     'Previous Day Same Hour Orders',
     min_value=0.0
-)
-assigned_shift = st.selectbox(
-    'Shift',
-    ['A','B','C','D','E','F']
 )
 st.subheader('Extracted Features')
 
