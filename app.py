@@ -23,7 +23,7 @@ elif 17 <= st_time <= 20:
     assigned_shift = 'E'
 else:
     assigned_shift = 'F'
-datetime_value = pd.to_datetime(f'{st_date} {st_time}')
+datetime_value = pd.to_datetime(f"{st_date} {st_time}:00:00")
 year = datetime_value.year
 month = datetime_value.month
 Day= datetime_value.day
