@@ -6,4 +6,3 @@ seaborn
 joblib
 streamlit
 xgboost
-pickle
